@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,6 +43,394 @@
     <!--Hero Programs Section-->
     <section class="image-section">
       <img src="/images/programs.jpg" alt="Program Image" />
+=======
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Program Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    /*Mengatur seluruh elemen*/
+    :root {
+      --bg-color: #fff;
+      --text-color1: #1f1f21;
+      --text-color2: #fff;
+      --main-color: #15a6f5;
+      --bg-opacity: #fffefa;
+
+      --big-font: 3rem;
+      --title-font: 40px;
+      --p-font: 1rem;
+    }
+
+    /*Mengatur Navbar*/
+    .navbar {
+      width: auto;
+      height: 70px;
+      margin: 15px;
+      border-radius: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      -ms-border-radius: 25px;
+      -o-border-radius: 25px;
+      transition: 0.3s background-color;
+      -webkit-transition: 0.3s background-color;
+      -moz-transition: 0.3s background-color;
+      -ms-transition: 0.3s background-color;
+      -o-transition: 0.3s background-color;
+    }
+
+    .navbar-brand img {
+      width: 40px;
+      height: auto;
+    }
+
+    .login-button {
+      margin-right: 10px;
+      background-color: var(--main-color);
+      opacity: 100%;
+      color: var(--text-color2);
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s backgroud-color;
+      -webkit-transition: 0.3s backgroud-color;
+      -moz-transition: 0.3s backgroud-color;
+      -ms-transition: 0.3s backgroud-color;
+      -o-transition: 0.3s backgroud-color;
+    }
+
+    .login-button:hover {
+      background-color: var(--main-color);
+      opacity: 70%;
+    }
+
+    .offcanvas-header img {
+      width: 40px;
+      height: auto;
+    }
+
+    .navbar-toggler {
+      border: none;
+      font-size: 1.5rem;
+    }
+
+    .navbar-toggler:focus,
+    .btn-close:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    .navbar .nav-link.active {
+      color: var(--text-color1);
+      font-weight: 700;
+    }
+
+    .navbar .nav-link {
+      color: var(--text-color1);
+      font-size: 18px;
+      font-weight: 550;
+      opacity: 85%;
+      position: relative;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active:hover {
+      color: var(--text-color1);
+      font-weight: 650;
+      opacity: 100%;
+    }
+
+    @media (min-width: 990px) {
+      .navbar .nav-link::before {
+        content: "";
+        color: var(--text-color2);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--main-color);
+        visibility: hidden;
+        transition: 0.3s ease-out;
+        -webkit-transition: 0.3s ease-out;
+        -moz-transition: 0.3s ease-out;
+        -ms-transition: 0.3s ease-out;
+        -o-transition: 0.3s ease-out;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+      }
+
+      .navbar .nav-link:hover::before,
+      .navbar .navlink.active::before {
+        width: 100%;
+        visibility: visible;
+      }
+    }
+
+    /*Mengatur tampilan depan programs*/
+    .image-section {
+      position: relative;
+      /*Menetapkan posisi elemen relatif terhadap posisinya sendiri.*/
+      height: 50vh;
+      /*Menentukan tinggi elemen 50% dari viewport height */
+      overflow: hidden;
+      /*Menyembunyikan konten yang melebihi batas elemen yang ditampilkan / terpotong*/
+    }
+
+    .image-section img {
+      width: 100%;
+      /*Gambar melebar penuh sesuai dengan ukuran container*/
+      height: 100%;
+      /*Gambar meninggi penuh sesuai dengan ukuran container*/
+      object-fit: cover;
+      /*Gambar tidak terdistorsi dan terlihat baik, karena mengisi seluruh area tanpa mengubah rasio*/
+    }
+
+    .overlay {
+      position: absolute;
+      /*Agar relatif bergerak terhadap posisi element parent-nya yaitu position relative*/
+      top: 0;
+      /*Membuat overlay menutupi seluruh area di atas konten di bawahnya.*/
+      left: 0;
+      /*Membuat overlay menutupi seluruh area di atas konten di bawahnya.*/
+      width: 100%;
+      /*Menentukan lebar overlay agar mengisi seluruh ruang*/
+      height: 100%;
+      /*Menentukan tinggi overlay agar mengisi seluruh ruang*/
+      background-color: rgba(0, 0, 0, 0.5);
+      /*Memberikan warna latar belakang hitam dengan transparansi 50%.*/
+      display: flex;
+      /*Mengatur penataan konten di dalamnya dengan mudah. */
+      flex-direction: column;
+      /*Mengatur arah penataan elemen agar disusun secara vertikal*/
+      justify-content: center;
+      /*Menyusun elemen  di tengah secara vertikal dalam overlay.*/
+      align-items: center;
+      /*Menyusun elemen  di tengah secara horizontal dalam overlay.*/
+      color: white;
+      /*Mengatur elemen teks menjadi warna putih*/
+      text-align: center;
+      /*mengatur teks didalam menjadi ke tengah*/
+    }
+
+    .img-custom {
+      max-width: 400px; /* Atur lebar maksimum sesuai kebutuhan */
+      width: 100%; /* Agar tetap responsif */
+      height: auto; /* Menjaga rasio aspek */
+    }
+
+
+    /* footer */
+
+    .list1,
+    .footer-links,
+    .list2 {
+      list-style-type: none;
+      /* Menghapus bullet points */
+      padding-left: 0;
+      /* Menghapus padding kiri */
+    }
+
+    .list1 li,
+    .footer-links li,
+    .list2 li {
+      margin-bottom: 10px;
+      /* Jarak bawah untuk item daftar */
+    }
+
+    /* Gaya untuk tautan di list1 */
+    .list1 a {
+      color: var(--text-color2);
+      /* Menggunakan variabel warna */
+      text-decoration: none;
+      /* Menghapus garis bawah */
+      letter-spacing: 1px;
+      /* Jarak antar huruf */
+      font-size: 16px;
+      /* Ukuran font */
+    }
+
+    .list1 a:hover {
+      text-decoration: underline;
+      /* Garis bawah saat hover */
+    }
+
+    /* Gaya untuk tautan di footer-links */
+    .footer-links a {
+      text-decoration: none;
+      /* Menghapus garis bawah */
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+      /* Garis bawah saat hover */
+    }
+
+    /* Gaya untuk tautan di list2 */
+    .list2 a {
+      color: var(--text-color2);
+      /* Menggunakan variabel warna */
+      text-decoration: none;
+      /* Menghapus garis bawah */
+      letter-spacing: 0.5px;
+      /* Jarak antar huruf */
+      font-size: 15px;
+      /* Ukuran font */
+    }
+
+    .list2 a:hover {
+      text-decoration: underline;
+      /* Garis bawah saat hover */
+    }
+
+    /* Gaya untuk judul di footer */
+    .footer h4 {
+      color: var(--text-color2);
+      /* Menggunakan variabel warna */
+      font-weight: 600;
+      /* Bobot font */
+      font-size: 20px;
+      /* Ukuran font */
+    }
+
+    /* Gaya untuk footer */
+    .footer {
+      background: linear-gradient(to right, #011f46, var(--main-color));
+      /* Gradien latar belakang */
+      opacity: 0.9;
+      /* Transparansi */
+    }
+
+    /* Gaya untuk elemen tambahan */
+    .list4,
+    .follow,
+    .copyright {
+      color: var(--text-color2);
+      /* Menggunakan variabel warna */
+      
+    }
+
+    /* Animasi dari perpaduan js */
+    .hidden{
+      opacity: 0;
+      filter: blur(5px);
+      transform: translateX(-100%);
+      transition: all 1s;
+    }
+
+    .show{
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(0);
+    }
+
+    /* Tombol button */
+    .button-group .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      width: 180px;
+      color: var(--bg-color);
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+      transition: all 0.3s ease;
+    }
+    /* button 2 css */
+    .button-group .btn-2 {
+      background-color: var(--main-color);
+    }
+    /* button 2 css */
+    .button-group .btn-1 {
+      background-color: #ee0d62;
+    }
+    /* animasi*/
+    .button-group .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 1);
+      opacity: 0.9;
+      -webkit-transform: translateY(-5px);
+      -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      -o-transform: translateY(-5px);
+    }
+    /* gradien css judul */
+    .content-2 h1 {
+      font-size: 37px;
+      font-weight: 650;
+      background: linear-gradient(to right, #011f46, var(--main-color));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Navbar Section-->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto" href="#">
+          <img src="./images/logo2.png" alt="logo" class="logo-small" />
+        </a>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <img src="./images/logo2.png" alt="logo" class="logo-small" />
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link  mx-lg-3" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-3" href="./aboutus.html">About us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle mx-lg-3" href="" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Programs
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./programs.html">All-Programs</a></li>
+                  <li><a class="dropdown-item" href="./myprogram.html">My-Program</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-3" href="./contactus.html">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="./login.html" class="login-button">Log in</a>
+        <button class="navbar-toggler pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!--Hero Programs Section-->
+    <section class="image-section">
+      <img src="./images/programs.jpg" alt="Program Image" />
+>>>>>>> 1456181 (FunEduCare Javascript)
       <div class="overlay">
         <p class="fs-1 fw-bolder">Our Program</p>
         <p class="fs-4 fw-lighter">
@@ -50,19 +439,59 @@
       </div>
     </section>
 
+<<<<<<< HEAD
     <!--Kurikulum Kami-->
     <section class="pt-5 p-4" id="kurikulum">
       <div class="container">
         <p class="text-center fs-1 fw-bolder mx-auto pb-4">Kurikulum Kami</p>
+=======
+    <!--Upcoming Event-->
+    <section class="hidden pt-5 p-4" id="upcoming-event">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <h2 class="text-center fs-1 fw-bolder mx-auto pb-4">Upcoming Event</h2>
+          <div class="col-md-6">
+            <img src="/images/Junior-Cooking-Competition.jpg" alt="Deskripsi Gambar" class="img-custom rounded mx-auto d-block">
+          </div>
+          <div class="col-md-6">
+            <h5 class="fs-3 fw-bolder pb-2">Junior Chef Cooking Competition: Hai Moms, Siapkan Si Kecil Menjadi Bintang Dapur!</h5>
+            <p class=" fw-medium">
+              Jangan lewatkan kesempatan emas ini! Daftarkan Si Kecil sekarang dan saksikan mereka bersinar di panggung dapur! 🌟
+              <br>
+              Yuk, moms! Ayo ajak Si Kecil untuk ikut berpartisipasi dan tunjukkan bakatnya! 🍽️✨
+            </p>
+            <h5 class="pt-5">Ayuk daftar sebelum ketinggalan</h5>
+            <h3 id="teks" class="pb-1" style="color: red;"></h3>
+            <div class="button-group mb-5 d-flex">
+              <button class="btn btn-1 mt-3 w-100" data-bs-target="#cookingCompetitionModal" data-bs-toggle="modal">Daftar Lomba Sekarang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!--Kurikulum Kami-->
+    <section class="hidden pt-5 p-4" id="kurikulum">
+      <div class="container">
+        <h2 class="text-center fs-1 fw-bolder mx-auto pb-4">Kurikulum Kami</h2>
+>>>>>>> 1456181 (FunEduCare Javascript)
         <div class="row g-5">
           <!--Card 1 Infant Care (0-12 Bulan)-->
           <div class="col-md-6 shadow-sm --bs-tertiary-bg rounded">
             <div class="card border border-0 d-flex flex-column h-100">
               <img
+<<<<<<< HEAD
                 class="pt-4"
                 src="images/baby.jpg"
                 class="card-img-top"
                 alt="..."
+=======
+              class="pt-4"
+              src="images/baby.jpg"
+              class="card-img-top"
+              alt="..."
+>>>>>>> 1456181 (FunEduCare Javascript)
               />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fs-2 fw-semibold">
@@ -88,9 +517,15 @@
                     Pengenalan bahasa isyarat untuk bayi
                   </li>
                 </ul>
+<<<<<<< HEAD
                 <a href="#" class="btn btn-primary mt-auto mb-2 d-grid gap-2"
                   >Booking Infant Care Program</a
                 >
+=======
+                <div class="button-group mb-5 d-flex">
+                  <button class="btn btn-2 mt-3 w-100">Booking Infant Care Program</button>
+                </div>
+>>>>>>> 1456181 (FunEduCare Javascript)
               </div>
             </div>
           </div>
@@ -126,9 +561,15 @@
                     Mewarnai menggunakan media tempel
                   </li>
                 </ul>
+<<<<<<< HEAD
                 <a href="#" class="btn btn-primary mt-auto mb-2 d-grid gap-2"
                   >Booking Toddler Program</a
                 >
+=======
+                <div class="button-group mb-5 d-flex">
+                  <button class="btn btn-2 mt-3 w-100">Booking Toddler Program</button>
+                </div>
+>>>>>>> 1456181 (FunEduCare Javascript)
               </div>
             </div>
           </div>
@@ -143,7 +584,11 @@
               />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fs-2 fw-semibold">
+<<<<<<< HEAD
                   Pre-School (3-4 Tahun)
+=======
+                  Pre-School Program (3-4 Tahun)
+>>>>>>> 1456181 (FunEduCare Javascript)
                 </h5>
                 <p class="card-text fw-medium fst-italic mt-4">
                   Kurikulum Pre-School kami berfokus mencakup
@@ -162,9 +607,15 @@
                     Keterampilan pengembangan sosial dan emosional
                   </li>
                 </ul>
+<<<<<<< HEAD
                 <a href="#" class="btn btn-primary mt-auto mb-2 d-grid gap-2"
                   >Booking Pre-School Program</a
                 >
+=======
+                <div class="button-group mb-5 d-flex">
+                  <button class="btn btn-2 mt-3 w-100">Booking Pre-School Program</button>
+                </div>
+>>>>>>> 1456181 (FunEduCare Javascript)
               </div>
             </div>
           </div>
@@ -198,9 +649,15 @@
                   </li>
                   <li class="list-group-item">Edukasi fisik dan olahraga</li>
                 </ul>
+<<<<<<< HEAD
                 <a href="#" class="btn btn-primary mt-auto mb-2 d-grid gap-2"
                   >Booking Pre-Kindergarten Program</a
                 >
+=======
+                <div class="button-group mb-5 d-flex">
+                  <button class="btn btn-2 mt-3 w-100">Booking Pre-Kindergarten Program</button>
+                </div>
+>>>>>>> 1456181 (FunEduCare Javascript)
               </div>
             </div>
           </div>
@@ -209,9 +666,15 @@
     </section>
 
     <!--Program Lainnya-->
+<<<<<<< HEAD
     <section class="pt-5 pb-5" id="program-lainnya">
       <div class="container">
         <p class="text-center fs-1 fw-bolder mx-auto pb-4">Program Lainnya</p>
+=======
+    <section class="hidden pt-5 pb-5" id="program-lainnya">
+      <div class="container">
+        <h2 class="text-center fs-1 fw-bolder mx-auto pb-4">Program Lainnya</h2>
+>>>>>>> 1456181 (FunEduCare Javascript)
         <div class="row g-4">
           <!--Parenting Seminar-->
           <div class="col-md">
@@ -220,6 +683,7 @@
                 <h5 class="card-title fs-2 fw-semibold text-center">
                   Seminar Parenting: Edukasi Anak
                 </h5>
+<<<<<<< HEAD
                 <p class="card-text fw-medium mt-2 text-center">
                   Ikuti seminar yang dipandu oleh para ahli mengenai berbagai
                   topik parenting:
@@ -241,6 +705,17 @@
                 <a href="#" class="btn btn-outline-primary mt-auto rounded-pill"
                   >Learn More Parenting Seminar</a
                 >
+=======
+                <p class="card-text fw-medium mt-2 text-center p-3">
+                  Ikuti seminar yang dipandu oleh para ahli mengenai berbagai
+                  topik parenting
+                </p>
+                <div class="button-group mb-5 d-flex">
+                  <button data-bs-target="#parentingSeminarModal" data-bs-toggle="modal" class="btn btn-1 mt-3 w-100 rounded-pill">
+                    Learn More Parenting Seminar
+                  </button>
+                </div>
+>>>>>>> 1456181 (FunEduCare Javascript)
               </div>
             </div>
           </div>
@@ -251,6 +726,7 @@
                 <h5 class="card-title fs-2 fw-semibold text-center">
                   Cooking Classes for Children's Nutrition
                 </h5>
+<<<<<<< HEAD
                 <p class="card-text fw-medium mt-2 text-center">
                   Pelajari cara menyiapkan makanan bergizi dan lezat untuk
                   anak-anak Anda:
@@ -273,6 +749,17 @@
                 <a href="#" class="btn btn-outline-primary mt-auto rounded-pill"
                   >Learn More Cooking Class</a
                 >
+=======
+                <p class="card-text fw-medium mt-2 text-center p-3">
+                  Pelajari cara menyiapkan makanan bergizi dan lezat untuk
+                  anak-anak Anda
+                </p>
+                <div class="button-group mb-5 d-flex">
+                  <button data-bs-target="#cookingClassModal" data-bs-toggle="modal" class="btn btn-1 mt-3 w-100 rounded-pill">
+                    Learn More Cooking Class
+                  </button>
+                </div>
+>>>>>>> 1456181 (FunEduCare Javascript)
               </div>
             </div>
           </div>
@@ -283,6 +770,7 @@
                 <h5 class="card-title fs-2 fw-semibold text-center">
                   Children's Work Exhibitions
                 </h5>
+<<<<<<< HEAD
                 <p class="card-text fw-medium mt-2 text-center">
                   Pekan pameran karya kreativitas dan pencapaian anak:
                 </p>
@@ -302,6 +790,16 @@
                 <a href="#" class="btn btn-outline-primary mt-auto rounded-pill"
                   >Learn More Exhibitions</a
                 >
+=======
+                <p class="card-text fw-medium mt-2 text-center p-3">
+                  Pekan pameran karya kreativitas dan pencapaian anak:
+                </p>
+                <div class="button-group mb-5 d-flex">
+                  <button data-bs-target="#childrenWorkExhibitions" data-bs-toggle="modal" class="btn btn-1 mt-3 w-100 rounded-pill">
+                    Learn More Exhibitions Party
+                  </button>
+                </div>
+>>>>>>> 1456181 (FunEduCare Javascript)
               </div>
             </div>
           </div>
@@ -309,6 +807,7 @@
       </div>
     </section>
 
+<<<<<<< HEAD
     <!--Footer-->
     <footer class="p-5 bg-primary text-white text-center position-relative">
       <div class="container">
@@ -319,3 +818,310 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+=======
+    <!--Modal Area Button-->
+    <!--Modal Button Seminar Parenting-->
+    <div class="modal modal-xl fade" id="parentingSeminarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="parentingSeminarModalLabel">Seminar Parenting Yang Akan Datang</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Tanggal</th>
+                  <th>Judul Seminar</th>
+                  <th>Pemateri</th>
+                  <th>Info Book</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>25 Oktober 2024</td>
+                  <td>Teknik Pengasuhan Anak Usia Dini</td>
+                  <td>Dr.Siti Aminah, Psikolog</td>
+                  <td><button class="btn btn-primary btn-sm">Tiket Tersedia</button></td>
+                </tr>
+                <tr>
+                  <td>5 November 2024</td>
+                  <td>Memahami Kesehatan Mental Anak</td>
+                  <td>Dr. Budi Setiawan, Sp.KJ</td>
+                  <td><button class="btn btn-warning btn-sm">Tiket Hampir Habis</button></td>
+                </tr>
+                <tr>
+                  <td>15 November 2024</td>
+                  <td>Pendidikan Karakter pada Anak</td>
+                  <td>Dr. Rina Kartika, M.Psi</td>
+                  <td><button class="btn btn-danger btn-sm" disabled>Tiket Habis Terjual</button></td>
+                </tr>
+                <tr>
+                  <td>22 November 2024</td>
+                  <td>Komunikasi Efektif dalam Keluarga</td>
+                  <td>Dr. Lina Maulida, M.A</td>
+                  <td><button class="btn btn-primary btn-sm">Tiket Tersedia</button></td>
+                </tr>
+                <tr>
+                  <td>25 November 2024</td>
+                  <td>Strategi Menghadapi Perilaku Anak</td>
+                  <td>Dr. Joko Prasetyo, M.Si</td>
+                  <td><button class="btn btn-primary btn-sm">Tiket Tersedia</button></td>
+                </tr>
+                <tr></tr>
+                  <td>1 Desember 2024</td>
+                  <td>Membangun Hubungan Positif dengan Anak</td>
+                  <td>Dr. Andi Susanto, M.Pd</td>
+                  <td><button class="btn btn-primary btn-sm">Tiket Tersedia</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal Button Cooking Class-->
+    <div class="modal modal-xl fade" id="cookingClassModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="cookingClassModalLabel">Cooking Class Yang Akan Datang</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Judul Kelas</th>
+                        <th>Pemateri</th>
+                        <th>Info Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 November 2024</td>
+                        <td>Dasar-dasar Memasak untuk Anak</td>
+                        <td>Chef Ani Pratiwi</td>
+                        <td><button class="btn btn-primary btn-sm">Tiket Tersedia</button></td>
+                    </tr>
+                    <tr>
+                        <td>8 November 2024</td>
+                        <td>Makanan Sehat dan Lezat untuk Anak</td>
+                        <td>Chef Budi Santoso</td>
+                        <td><button class="btn btn-warning btn-sm">Tiket Hampir Habis</button></td>
+                    </tr>
+                    <tr>
+                        <td>15 November 2024</td>
+                        <td>Snack Sehat yang Mudah Dibuat</td>
+                        <td>Chef Rina Mulyani</td>
+                        <td><button class="btn btn-primary btn-sm">Tiket Tersedia</button></td>
+                    </tr>
+                    <tr>
+                        <td>22 November 2024</td>
+                        <td>Menu Kreatif untuk Picky Eaters</td>
+                        <td>Chef Taufik Hidayat</td>
+                        <td><button class="btn btn-danger btn-sm" disabled>Tiket Habis Terjual</button></td>
+                    </tr>
+                    <tr>
+                        <td>29 November 2024</td>
+                        <td>Pentingnya Nutrisi Seimbang untuk Anak</td>
+                        <td>Chef Siti Rahmawati</td>
+                        <td><button class="btn btn-primary btn-sm">Tiket Tersedia</button></td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal Button Children's Work Exhibitions-->
+    <div class="modal modal-xl fade" id="childrenWorkExhibitions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="childrenWorkExhibitionsLabel">Pameran Yang Akan Datang</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Judul Pameran</th>
+                        <th>Deskripsi</th>
+                        <th>Info Pendaftaran</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10 Januari 2025</td>
+                        <td>Pameran Karya Seni Anak</td>
+                        <td>Pameran seni lukis dan kerajinan tangan oleh anak-anak.</td>
+                        <td><button class="btn btn-primary btn-sm">Daftar Sekarang</button></td>
+                    </tr>
+                    <tr>
+                        <td>17 Januari 2025</td>
+                        <td>Pameran Inovasi Anak</td>
+                        <td>Pameran inovasi dan proyek kreatif dari anak-anak sekolah.</td>
+                        <td><button class="btn btn-warning btn-sm">Tempat Terbatas</button></td>
+                    </tr>
+                    <tr>
+                        <td>24 Januari 2025</td>
+                        <td>Pameran Talenta Anak</td>
+                        <td>Pameran bakat anak dalam bidang musik dan tari.</td>
+                        <td><button class="btn btn-danger btn-sm" disabled>Pendaftaran Tutup</button></td>
+                    </tr>
+                    <tr>
+                        <td>31 Januari 2025</td>
+                        <td>Pameran Sains Anak</td>
+                        <td>Pameran eksperimen sains dan penemuan oleh anak-anak.</td>
+                        <td><button class="btn btn-primary btn-sm">Daftar Sekarang</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal Button Cooking Competition-->
+    <div class="modal fade" id="cookingCompetitionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Isi Data Diri Buah Hati</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="full-name" class="col-form-label">Nama Lengkap Anak:</label>
+                <input type="text" class="form-control" id="full-name" required>
+              </div>            
+              <div class="mb-3">
+                <label for="email" class="col-form-label">Email Orang Tua / Wali:</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="col-form-label">Nomor Telepon Orang Tua:</label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+              <div class="mb-3">
+                <label for="dob" class="col-form-label">Tanggal Lahir Anak:</label>
+                <input type="date" class="form-control" id="dob" required>
+            </div>
+            <div class="mb-3">
+              <label class="col-form-label">Jenis Kelamin:</label>
+              <select class="form-control" id="gender" required>
+                  <option value="">Pilih</option>
+                  <option value="male">Laki-laki</option>
+                  <option value="female">Perempuan</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="consent" required>
+                  <label class="form-check-label" for="consent">
+                      Saya setuju untuk mengikuti lomba dan mengikuti syarat dan ketentuan yang berlaku.
+                  </label>
+              </div>
+            </div>                                          
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
+            <button type="button" class="btn btn-primary">Ikut Lomba</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </main>
+
+  <!--Footer-->
+
+  <footer class="container-footer footer">
+    <div class="pt-4 p-5">
+      <div class="row">
+        <div class="col-md-4 ">
+          <ul class="list1">
+            <li><a href="#">TentangKami</a></li>
+            <li><a href="#">Pendaftaran</a></li>
+            <li><a href="#">Testimoni</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">LayananLainnya</a></li>
+            <li><a href="#">KebijakanPrivasi</a></li>
+            <li><a href="#">Syarat dan Ketentuan</a></li>
+          </ul>
+        </div>
+        <!-- footer column 2 -->
+        <div class="col-md-4">
+          <h4>Paket Booking</h4>
+          <ul class="list2">
+            <li><a href="#"">DurasiPenitipan</a></li>
+                      <li><a href=" #">Frekuensi</a></li>
+            <li><a href="#">LayananDasar</a></li>
+            <li><a href="#">Akses Fasilitas</a></li>
+            <li><a href="#">LaporanHarian</a></li>
+            <li><a href="#">PilihanTambahan</a></li>
+            <li><a href="#">AksesAplikasi</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+
+          <ul class="list4">
+            <h4>Kontak Kami</h4>
+            <h5>Alamat</h5>
+            <li>Jl.Mawar No 123, Jakarta, Indonesia</li>
+          </ul>
+          <ul class="list4">
+            <h5>Telepon</h5>
+            <li>(021)1234-5678</li>
+          </ul>
+          <ul class="list4">
+            <h5>Email</h5>
+            <li>Daycare01@gmail.com</li>
+          </ul>
+
+        </div>
+
+        <!-- footer column 3/social media -->
+        <div class="d-flex justify-content-center">
+          <div class="col-md-4 text-center ">
+            <h5 class="follow">Follow Us</h5>
+            <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="copyright text-center mt-4 ">
+        <p>&copy; 2024 FunEduCare. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- link icon bostrap -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="programs.js"></script>
+</body>
+
+</html>
+>>>>>>> 1456181 (FunEduCare Javascript)
