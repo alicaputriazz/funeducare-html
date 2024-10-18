@@ -7,7 +7,15 @@
   <title>Our Program Section</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!--Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <style>
+    *{
+      font-family: "Poppins", sans-serif;
+    }
     /*Mengatur seluruh elemen*/
     :root {
       --bg-color: #fff;
@@ -160,8 +168,6 @@
       /*Menentukan lebar overlay agar mengisi seluruh ruang*/
       height: 100%;
       /*Menentukan tinggi overlay agar mengisi seluruh ruang*/
-      background-color: rgba(0, 0, 0, 0.5);
-      /*Memberikan warna latar belakang hitam dengan transparansi 50%.*/
       display: flex;
       /*Mengatur penataan konten di dalamnya dengan mudah. */
       flex-direction: column;
@@ -170,8 +176,6 @@
       /*Menyusun elemen  di tengah secara vertikal dalam overlay.*/
       align-items: center;
       /*Menyusun elemen  di tengah secara horizontal dalam overlay.*/
-      color: white;
-      /*Mengatur elemen teks menjadi warna putih*/
       text-align: center;
       /*mengatur teks didalam menjadi ke tengah*/
     }
@@ -181,7 +185,6 @@
       width: 100%; /* Agar tetap responsif */
       height: auto; /* Menjaga rasio aspek */
     }
-
 
     /* footer */
 
@@ -273,18 +276,24 @@
       
     }
 
-    /* Animasi dari perpaduan js */
-    .hidden{
-      opacity: 0;
-      filter: blur(5px);
-      transform: translateX(-100%);
-      transition: all 1s;
+    .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
-    .show{
-      opacity: 1;
-      filter: blur(0);
-      transform: translateX(0);
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .list-group {
+      flex-grow: 1;
+    }
+
+    .button-group {
+      margin-top: auto;
     }
 
     /* Tombol button */
@@ -302,11 +311,18 @@
       margin-right: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
       transition: all 0.3s ease;
+
     }
     /* button 2 css */
     .button-group .btn-2 {
       background-color: var(--main-color);
     }
+    
+    .button-group .btn-3 {
+      background-color: var(--bg-color);
+      color: var(--main-color);
+    }
+
     /* button 2 css */
     .button-group .btn-1 {
       background-color: #ee0d62;
@@ -322,7 +338,35 @@
       -o-transform: translateY(-5px);
     }
     /* gradien css judul */
-    .content-2 h1 {
+    .content-1 h1 {
+      margin-top: 5.5rem;
+      font-size: 70px;
+      font-weight: 650;
+      background: linear-gradient(to right, var(--main-color), #ee0d62);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      align-items: start;
+    }
+
+    .content-1 p {
+      color: var(--text-color1);
+      opacity: 90%;
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+      font-size: 17px;
+    }
+
+    .garis {
+      opacity: 97%;
+      height: 1px;
+      background: linear-gradient(50deg, #011f46, var(--main-color));
+      border: none;
+      border-radius: 17px;
+      width: 90%;
+    }
+    
+    .content-2 h2 {
       font-size: 37px;
       font-weight: 650;
       background: linear-gradient(to right, #011f46, var(--main-color));
@@ -331,6 +375,30 @@
       color: transparent;
       -webkit-text-fill-color: transparent;
     }
+
+    .content-1 h3 {
+      margin-top: 4.5rem;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--text-color1);
+      opacity: 90%;
+      text-align: start;
+    }
+
+
+    /* Animasi dari perpaduan js
+    .hidden{
+      opacity: 0;
+      filter: blur(5px);
+      transform: translateX(-100%);
+      transition: all 0.5s;
+    }
+
+    .show{
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(0);
+    } */
   </style>
 </head>
 
@@ -382,25 +450,26 @@
       </div>
     </nav>
   </header>
+  <!-- content -->
   <main>
     <!--Hero Programs Section-->
     <section class="image-section">
-      <img src="./images/programs.jpg" alt="Program Image" />
-      <div class="overlay">
-        <p class="fs-1 fw-bolder">Our Program</p>
-        <p class="fs-4 fw-lighter">
-          Engaging activities for children's growth and development
-        </p>
+      <img src="./images/landing-page-new.jpg" alt="Program Image" />
+      <div class="overlay content-1">
+        <h1>Our Program</h1>
+        <hr class="garis mx-auto mx-md-0">
+        <p>
+          Lihat kegiatan menarik untuk pertumbuhan dan perkembangan anak
+         </p>
       </div>
     </section>
-
     <!--Upcoming Event-->
     <section class="hidden pt-5 p-4" id="upcoming-event">
       <div class="container">
-        <div class="row g-5 align-items-center">
+        <div class="row g-5 align-items-center content-2">
           <h2 class="text-center fs-1 fw-bolder mx-auto pb-4">Upcoming Event</h2>
           <div class="col-md-6">
-            <img src="/images/Junior-Cooking-Competition.jpg" alt="Deskripsi Gambar" class="img-custom rounded mx-auto d-block">
+            <img src="./images/Junior-Cooking-Competition.jpg" alt="Deskripsi Gambar" class="img-custom rounded mx-auto d-block">
           </div>
           <div class="col-md-6">
             <h5 class="fs-3 fw-bolder pb-2">Junior Chef Cooking Competition: Hai Moms, Siapkan Si Kecil Menjadi Bintang Dapur!</h5>
@@ -417,59 +486,74 @@
           </div>
         </div>
       </div>
-    </section>
-    
-
+    </section>   
     <!--Kurikulum Kami-->
     <section class="hidden pt-5 p-4" id="kurikulum">
-      <div class="container">
+      <div class="container content-2">
         <h2 class="text-center fs-1 fw-bolder mx-auto pb-4">Kurikulum Kami</h2>
         <div class="row g-5">
           <!--Card 1 Infant Care (0-12 Bulan)-->
-          <div class="col-md-6 shadow-sm --bs-tertiary-bg rounded">
-            <div class="card border border-0 d-flex flex-column h-100">
-              <img
-              class="pt-4"
-              src="images/baby.jpg"
-              class="card-img-top"
-              alt="..."
-              />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title fs-2 fw-semibold">
-                  Infant Care (0-12 Bulan)
-                </h5>
-                <p class="card-text fw-medium fst-italic mt-4">
-                  Kurikulum Infant Care kami berfokus mencakup
-                </p>
-                <ul class="list-group list-group-flush pb-4">
-                  <li class="list-group-item">
-                    Lingkungan yang aman dan menarik untuk eksplorasi
-                  </li>
-                  <li class="list-group-item">
-                    Mainan dan aktivitas yang sesuai dengan tahap usia
-                  </li>
-                  <li class="list-group-item">
-                    Sesi musik dan gerakan untuk stimulasi
-                  </li>
-                  <li class="list-group-item">
-                    Tummy time seperti aktivitas pengembangan fisik
-                  </li>
-                  <li class="list-group-item">
-                    Pengenalan bahasa isyarat untuk bayi
-                  </li>
-                </ul>
-                <div class="button-group mb-5 d-flex">
-                  <button class="btn btn-2 mt-3 w-100">Booking Infant Care Program</button>
+            <div class="col-md-6 shadow-sm --bs-tertiary-bg rounded">
+              <div class="card border border-0 d-flex flex-column h-100">
+                <img
+                class="pt-4"
+                src="images/baby.jpg"
+                class="card-img-top"
+                alt="..."
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fs-2 fw-semibold">
+                    Infant Care (0-12 Bulan)
+                  </h5>
+                  <p class="card-text fw-medium fst-italic mt-4">
+                    Kurikulum Infant Care kami berfokus mencakup
+                  </p>
+                  <ul class="list-group list-group-flush pb-4 flex-grow-1">
+                    <li class="list-group-item">
+                      Lingkungan yang aman dan menarik untuk eksplorasi
+                    </li>
+                    <li class="list-group-item">
+                      Mainan dan aktivitas yang sesuai dengan tahap usia
+                    </li>
+                    <li class="list-group-item">
+                      Sesi musik dan gerakan untuk stimulasi
+                    </li>
+                    <li class="list-group-item">
+                      Tummy time seperti aktivitas pengembangan fisik
+                    </li>
+                    <li class="list-group-item">
+                      Pengenalan bahasa isyarat untuk bayi
+                    </li>
+                  </ul>
+                  <div id="moreInfoInfantCare" class="mt-1" style="display: none;">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h6>Jadwal</h6>
+                        <p>Senin - Jumat, 07.00 - 18.00</p>
+                      </div>
+                      <div class="col-md-6">
+                        <h6>Biaya</h6>
+                        <p>Mulai dari Rp 2.500.000/bulan</p>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary btn-block d-flex justify-content-center align-items-center w-100" data-bs-toggle="modal" data-bs-target="#infoModalInfantCare">Lihat Detail Lengkap</button>
+                  </div>
+                  <div class="button-group d-flex">
+                    <button class="btn btn-block btn-3 mt-3 w-100" id="toggleInfoInfantCare">Informasi Lebih Lanjut</button>
+                  </div>
+                  <div class="button-group mb-5 d-flex">
+                    <button class=" btn btn-block btn-2 mt-3 w-100" style="margin-top: auto;" >Booking Infant Care Program</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+            
           <!--Card 2 Toddler Program-->
           <div class="col-md-6 shadow-sm --bs-tertiary-bg rounded">
             <div class="card border border-0 d-flex flex-column h-100">
               <img
                 class="pt-4"
-                src="images/toddler-1.jpeg"
+                src="./images/toddler-1.jpeg.jpg"
                 class="card-img-top"
                 alt="..."
               />
@@ -496,12 +580,29 @@
                     Mewarnai menggunakan media tempel
                   </li>
                 </ul>
+                <div id="moreInfoToddlerProgram" class="mt-1" style="display: none;">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6>Jadwal</h6>
+                      <p>Senin - Jumat, 07.00 - 18.00</p>
+                    </div>
+                    <div class="col-md-6">
+                      <h6>Biaya</h6>
+                      <p>Mulai dari Rp 2.500.000/bulan</p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-outline-secondary btn-block d-flex justify-content-center align-items-center w-100" data-bs-toggle="modal" data-bs-target="#infoModalToddlerProgram">Lihat Detail Lengkap</button>
+                </div>
+                <div class="button-group d-flex">
+                  <button class="btn btn-block btn-3 mt-3 w-100" id="toggleInfoToddlerProgram">Informasi Lebih Lanjut</button>
+                </div>
                 <div class="button-group mb-5 d-flex">
-                  <button class="btn btn-2 mt-3 w-100">Booking Toddler Program</button>
+                  <button class=" btn btn-block btn-2 mt-3 w-100" style="margin-top: auto;">Booking Toddler Program</button>
                 </div>
               </div>
             </div>
           </div>
+
           <!--Card 3 PreSchool Program-->
           <div class="col-md-6 shadow-sm --bs-tertiary-bg rounded">
             <div class="card border border-0 d-flex flex-column h-100">
@@ -532,8 +633,24 @@
                     Keterampilan pengembangan sosial dan emosional
                   </li>
                 </ul>
+                <div id="moreInfoPre-SchoolProgram" class="mt-1" style="display: none;">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6>Jadwal</h6>
+                      <p>Senin - Jumat, 07.00 - 18.00</p>
+                    </div>
+                    <div class="col-md-6">
+                      <h6>Biaya</h6>
+                      <p>Mulai dari Rp 2.500.000/bulan</p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-outline-secondary btn-block d-flex justify-content-center align-items-center w-100" data-bs-toggle="modal" data-bs-target="#infoModalPre-SchoolProgram">Lihat Detail Lengkap</button>
+                </div>
+                <div class="button-group d-flex">
+                  <button class=" btn btn-block btn-3 mt-3 w-100" id="toggleInfoPre-SchoolProgram">Informasi Lebih Lanjut</button>
+                </div>
                 <div class="button-group mb-5 d-flex">
-                  <button class="btn btn-2 mt-3 w-100">Booking Pre-School Program</button>
+                  <button class=" btn btn-block btn-2 mt-3 w-100" style="margin-top: auto;">Booking Pre-School Program</button>
                 </div>
               </div>
             </div>
@@ -568,8 +685,24 @@
                   </li>
                   <li class="list-group-item">Edukasi fisik dan olahraga</li>
                 </ul>
+                <div id="moreInfoPre-KindergartenProgram" class="mt-1" style="display: none;">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6>Jadwal</h6>
+                      <p>Senin - Jumat, 07.00 - 18.00</p>
+                    </div>
+                    <div class="col-md-6">
+                      <h6>Biaya</h6>
+                      <p>Mulai dari Rp 2.500.000/bulan</p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-outline-secondary btn-block d-flex justify-content-center align-items-center w-100" data-bs-toggle="modal" data-bs-target="#infoModalPre-KindergartenProgram">Lihat Detail Lengkap</button>
+                </div>
+                <div class="button-group d-flex">
+                  <button class=" btn btn-block btn-3 mt-3 w-100" id="toggleInfoPre-KindergartenProgram">Informasi Lebih Lanjut</button>
+                </div>
                 <div class="button-group mb-5 d-flex">
-                  <button class="btn btn-2 mt-3 w-100">Booking Pre-Kindergarten Program</button>
+                  <button class=" btn btn-block btn-2 mt-3 w-100" style="margin-top: auto;">Booking Pre-Kindergarten Program</button>
                 </div>
               </div>
             </div>
@@ -577,10 +710,9 @@
         </div>
       </div>
     </section>
-
     <!--Program Lainnya-->
     <section class="hidden pt-5 pb-5" id="program-lainnya">
-      <div class="container">
+      <div class="container content-2">
         <h2 class="text-center fs-1 fw-bolder mx-auto pb-4">Program Lainnya</h2>
         <div class="row g-4">
           <!--Parenting Seminar-->
@@ -590,13 +722,13 @@
                 <h5 class="card-title fs-2 fw-semibold text-center">
                   Seminar Parenting: Edukasi Anak
                 </h5>
-                <p class="card-text fw-medium mt-2 text-center p-3">
+                <p class="card-text fw-medium mt-2 text-center" style="margin: auto;">
                   Ikuti seminar yang dipandu oleh para ahli mengenai berbagai
                   topik parenting
                 </p>
                 <div class="button-group mb-5 d-flex">
                   <button data-bs-target="#parentingSeminarModal" data-bs-toggle="modal" class="btn btn-1 mt-3 w-100 rounded-pill">
-                    Learn More Parenting Seminar
+                    Daftar Seminar Parenting
                   </button>
                 </div>
               </div>
@@ -607,15 +739,15 @@
             <div class="card border border-1 d-flex flex-column h-100">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fs-2 fw-semibold text-center">
-                  Cooking Classes for Children's Nutrition
+                  Kelas Memasak Nutrisi Anak
                 </h5>
-                <p class="card-text fw-medium mt-2 text-center p-3">
+                <p class="card-text fw-medium mt-2 text-center" style="margin: auto;">
                   Pelajari cara menyiapkan makanan bergizi dan lezat untuk
                   anak-anak Anda
                 </p>
                 <div class="button-group mb-5 d-flex">
                   <button data-bs-target="#cookingClassModal" data-bs-toggle="modal" class="btn btn-1 mt-3 w-100 rounded-pill">
-                    Learn More Cooking Class
+                    Daftar Kelas Memasak
                   </button>
                 </div>
               </div>
@@ -626,14 +758,14 @@
             <div class="card border border-1 d-flex flex-column h-100">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title fs-2 fw-semibold text-center">
-                  Children's Work Exhibitions
+                  Pameran Karya Anak - Anak
                 </h5>
-                <p class="card-text fw-medium mt-2 text-center p-3">
-                  Pekan pameran karya kreativitas dan pencapaian anak:
+                <p class="card-text fw-medium text-center">
+                  Menampilkan berbagai karya dan prestasi luar biasa yang dihasilkan oleh anak-anak.
                 </p>
                 <div class="button-group mb-5 d-flex">
                   <button data-bs-target="#childrenWorkExhibitions" data-bs-toggle="modal" class="btn btn-1 mt-3 w-100 rounded-pill">
-                    Learn More Exhibitions Party
+                    Daftar Kegiatan Pameran
                   </button>
                 </div>
               </div>
@@ -642,7 +774,6 @@
         </div>
       </div>
     </section>
-
     <!--Modal Area Button-->
     <!--Modal Button Seminar Parenting-->
     <div class="modal modal-xl fade" id="parentingSeminarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -869,22 +1000,259 @@
         </div>
       </div>
     </div>
+
+    <!--Modal Infant Care-->
+    <div class="modal fade" id="infoModalInfantCare" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="infoModalLabel">Informasi Lengkap - Infant Care Program</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="row mt-2">
+                      <div class="col-md-6">
+                          <h4>Jadwal dan Biaya</h4>
+                          <p>Program Infant Care kami tersedia setiap hari Senin hingga Jumat, dari pukul 07.00 hingga 18.00.</p>
+                          <ul>
+                              <li>Full-time (5 hari): Rp 3.500.000/bulan</li>
+                              <li>Part-time (3 hari): Rp 2.500.000/bulan</li>
+                              <li>Drop-in: Rp 250.000/hari</li>
+                          </ul>
+                      </div>
+                      <div class="col-md-6">
+                          <h4>Fasilitas</h4>
+                          <p>Fasilitas kami dirancang khusus untuk kenyamanan dan keamanan bayi:</p>
+                          <ul>
+                              <li>Ruangan bermain yang luas dan aman</li>
+                              <li>Area tidur yang tenang dan bersih</li>
+                              <li>Peralatan stimulasi perkembangan terkini</li>
+                              <li>Sistem pemantauan CCTV untuk keamanan ekstra</li>
+                          </ul>
+                      </div>
+                  </div>
+                  <hr>
+                  <div class="mt-3">
+                      <h4>Profil Pengajar</h4>
+                      <div class="row">
+                          <div class="col-md-4 text-center">
+                              <img src="./images/guru1.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                              <h5>Ms. Sari</h5>
+                              <p>Kepala Pengajar (10 tahun pengalaman)</p>
+                          </div>
+                          <div class="col-md-4 text-center">
+                            <img src="./images/guru2.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                            <h5>Ms. Rina</h5>
+                            <p>Perawat Bayi Bersertifikat</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          <img src="./images/guru4.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                          <h5>Ms. Bunga</h5>
+                          <p>Spesialis Perkembangan Anak</p>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                  <button type="button" class="btn btn-primary">Hubungi Kami</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--Modal Toddler Program-->
+  <div class="modal fade" id="infoModalToddlerProgram" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoModalLabel">Informasi Lengkap - Toddler Program</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <h4>Jadwal dan Biaya</h4>
+                        <p>Program Toddler Program kami tersedia setiap hari Senin hingga Jumat, dari pukul 07.00 hingga 18.00.</p>
+                        <ul>
+                            <li>Full-time (5 hari): Rp 3.500.000/bulan</li>
+                            <li>Part-time (3 hari): Rp 2.500.000/bulan</li>
+                            <li>Drop-in: Rp 250.000/hari</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Fasilitas</h4>
+                        <p>Fasilitas kami dirancang khusus untuk kenyamanan dan keamanan Toodler:</p>
+                        <ul>
+                            <li>Ruangan bermain yang luas dan aman</li>
+                            <li>Area tidur yang tenang dan bersih</li>
+                            <li>Peralatan stimulasi perkembangan terkini</li>
+                            <li>Sistem pemantauan CCTV untuk keamanan ekstra</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="mt-3">
+                    <h4>Profil Pengajar</h4>
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="./images/guru1.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                            <h5>Ms. Sari</h5>
+                            <p>Kepala Pengajar (10 tahun pengalaman)</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          <img src="./images/guru2.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                          <h5>Ms. Rina</h5>
+                          <p>Perawat Bayi Bersertifikat</p>
+                      </div>
+                      <div class="col-md-4 text-center">
+                        <img src="./images/guru4.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                        <h5>Ms. Bunga</h5>
+                        <p>Spesialis Perkembangan Anak</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary">Hubungi Kami</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal Pre-School Program-->
+<div class="modal fade" id="infoModalPre-SchoolProgram" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="infoModalLabel">Informasi Lengkap - Pre-School Program</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="row mt-2">
+                  <div class="col-md-6">
+                      <h4>Jadwal dan Biaya</h4>
+                      <p>Program Pre-School kami tersedia setiap hari Senin hingga Jumat, dari pukul 07.00 hingga 18.00.</p>
+                      <ul>
+                          <li>Full-time (5 hari): Rp 3.500.000/bulan</li>
+                          <li>Part-time (3 hari): Rp 2.500.000/bulan</li>
+                          <li>Drop-in: Rp 250.000/hari</li>
+                      </ul>
+                  </div>
+                  <div class="col-md-6">
+                      <h4>Fasilitas</h4>
+                      <p>Fasilitas kami dirancang khusus untuk kenyamanan dan keamanan anak:</p>
+                      <ul>
+                          <li>Ruangan bermain yang luas dan aman</li>
+                          <li>Area tidur yang tenang dan bersih</li>
+                          <li>Peralatan stimulasi perkembangan terkini</li>
+                          <li>Sistem pemantauan CCTV untuk keamanan ekstra</li>
+                      </ul>
+                  </div>
+              </div>
+              <hr>
+              <div class="mt-3">
+                  <h4>Profil Pengajar</h4>
+                  <div class="row">
+                      <div class="col-md-4 text-center">
+                          <img src="./images/guru1.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                          <h5>Ms. Sari</h5>
+                          <p>Kepala Pengajar (10 tahun pengalaman)</p>
+                      </div>
+                      <div class="col-md-4 text-center">
+                        <img src="./images/guru2.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                        <h5>Ms. Rina</h5>
+                        <p>Perawat Bayi Bersertifikat</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                      <img src="./images/guru4.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                      <h5>Ms. Bunga</h5>
+                      <p>Spesialis Perkembangan Anak</p>
+                  </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+              <button type="button" class="btn btn-primary">Hubungi Kami</button>
+          </div>
+      </div>
+  </div>
+</div>
+<!--Modal Pre-Kindergarten Program-->
+<div class="modal fade" id="infoModalPre-KindergartenProgram" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="infoModalLabel">Informasi Lengkap - Pre-Kindergarten Program</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="row mt-2">
+                  <div class="col-md-6">
+                      <h4>Jadwal dan Biaya</h4>
+                      <p>Program Pre-Kindergarten kami tersedia setiap hari Senin hingga Jumat, dari pukul 07.00 hingga 18.00.</p>
+                      <ul>
+                          <li>Full-time (5 hari): Rp 3.500.000/bulan</li>
+                          <li>Part-time (3 hari): Rp 2.500.000/bulan</li>
+                          <li>Drop-in: Rp 250.000/hari</li>
+                      </ul>
+                  </div>
+                  <div class="col-md-6">
+                      <h4>Fasilitas</h4>
+                      <p>Fasilitas kami dirancang khusus untuk kenyamanan dan keamanan anak:</p>
+                      <ul>
+                          <li>Ruangan bermain yang luas dan aman</li>
+                          <li>Area tidur yang tenang dan bersih</li>
+                          <li>Peralatan stimulasi perkembangan terkini</li>
+                          <li>Sistem pemantauan CCTV untuk keamanan ekstra</li>
+                      </ul>
+                  </div>
+              </div>
+              <hr>
+              <div class="mt-3">
+                  <h4>Profil Pengajar</h4>
+                  <div class="row">
+                      <div class="col-md-4 text-center">
+                          <img src="./images/guru1.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                          <h5>Ms. Sari</h5>
+                          <p>Kepala Pengajar (10 tahun pengalaman)</p>
+                      </div>
+                      <div class="col-md-4 text-center">
+                        <img src="./images/guru2.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                        <h5>Ms. Rina</h5>
+                        <p>Perawat Bayi Bersertifikat</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                      <img src="./images/guru4.jpeg" class="img-fluid rounded-circle mb-2 border border-radius" alt="Ms. Sari" style="width: 100px;">
+                      <h5>Ms. Bunga</h5>
+                      <p>Spesialis Perkembangan Anak</p>
+                  </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+              <button type="button" class="btn btn-primary">Hubungi Kami</button>
+          </div>
+      </div>
+  </div>
+</div>
+  
+  
     
   </main>
-
   <!--Footer-->
-
   <footer class="container-footer footer">
     <div class="pt-4 p-5">
       <div class="row">
         <div class="col-md-4 ">
           <ul class="list1">
-            <li><a href="#">TentangKami</a></li>
+            <li><a href="#">Tentang Kami</a></li>
             <li><a href="#">Pendaftaran</a></li>
             <li><a href="#">Testimoni</a></li>
             <li><a href="#">FAQ</a></li>
-            <li><a href="#">LayananLainnya</a></li>
-            <li><a href="#">KebijakanPrivasi</a></li>
+            <li><a href="#">Layanan Lainnya</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
             <li><a href="#">Syarat dan Ketentuan</a></li>
           </ul>
         </div>
@@ -892,13 +1260,13 @@
         <div class="col-md-4">
           <h4>Paket Booking</h4>
           <ul class="list2">
-            <li><a href="#"">DurasiPenitipan</a></li>
-                      <li><a href=" #">Frekuensi</a></li>
-            <li><a href="#">LayananDasar</a></li>
+            <li><a href="#"">Durasi Penitipan</a></li>
+            <li><a href=" #">Frekuensi</a></li>
+            <li><a href="#">Layanan Dasar</a></li>
             <li><a href="#">Akses Fasilitas</a></li>
-            <li><a href="#">LaporanHarian</a></li>
-            <li><a href="#">PilihanTambahan</a></li>
-            <li><a href="#">AksesAplikasi</a></li>
+            <li><a href="#">Laporan Harian</a></li>
+            <li><a href="#">Pilihan Tambahan</a></li>
+            <li><a href="#">Akses Aplikasi</a></li>
           </ul>
         </div>
 
@@ -944,6 +1312,10 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <script src="programs.js"></script>
 </body>
 
